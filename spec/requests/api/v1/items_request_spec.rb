@@ -91,6 +91,20 @@ RSpec.describe "Items API" do
     expect(item[:data][:attributes][:merchant_id]).to eq(not_yet_updated.merchant_id)
   end
 
+  it "sad path edit failed" do
+
+    not_yet_updated = Item.first
+
+    item_params = {name: 'Crystal that looks like Denise Richards', merchant_id: nil}
+
+    headers = {"CONTENT_TYPE" => "application/json"}
+    patch "/api/v1/items/#{not_yet_updated.id}", headers: headers, params: JSON.generate(item: item_params)
+
+    item = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to_not be_successful
+  end
+
   it "sends info to create a new item" do
     item_params = {
               name: 'Rock that looks like Rick Moranis',
@@ -122,6 +136,4 @@ RSpec.describe "Items API" do
     expect(Item.count).to eq(5)
     expect{Item.find(item.id)}.to raise_error(ActiveRecord::RecordNotFound)
   end
-
-
 end
