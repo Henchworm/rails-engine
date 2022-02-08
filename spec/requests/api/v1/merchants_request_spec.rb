@@ -1,5 +1,6 @@
 require 'rails_helper'
 RSpec.describe "Merchants API" do
+
   it "sends a list of all merchants(index)" do
     create_list(:merchant, 5)
 
@@ -31,6 +32,13 @@ RSpec.describe "Merchants API" do
    end
   end
 
+  it "sad path no merchants(index) blank parse" do
+      get '/api/v1/merchants'
+      expect(response).to be_successful
+      merchants = JSON.parse(response.body, symbolize_names: true)
+      expect(merchants).to eq({data:[]})
+  end
+
   it "sends info for a single merchant(show)" do
     merchant_1 = Merchant.create!(name: "Billy's Pet Rocks")
     item_1 = merchant_1.items.create!(name: 'Obsidian Nobice', description: 'A beautiful obsidian', unit_price: 500)
@@ -53,5 +61,13 @@ RSpec.describe "Merchants API" do
 
     expect(merchant[:data][:attributes]).to have_key(:updated_at)
     expect(merchant[:data][:attributes][:updated_at]).to be_a(String)
+  end
+
+  xit "sad path no merchant(show) blank parse" do
+      get '/api/v1/merchants/1'
+      expect(response).to be_successful
+      merchant = JSON.parse(response.body, symbolize_names: true)
+      binding.pry
+      expect(merchants).to eq({data:[]})
   end
 end
