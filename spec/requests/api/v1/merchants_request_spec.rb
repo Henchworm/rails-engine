@@ -23,12 +23,6 @@ RSpec.describe "Merchants API" do
      expect(merchant[:attributes]).to have_key(:name)
      expect(merchant[:attributes][:name]).to be_a(String)
 
-
-     expect(merchant[:attributes]).to have_key(:created_at)
-     expect(merchant[:attributes][:created_at]).to be_a(String)
-
-     expect(merchant[:attributes]).to have_key(:updated_at)
-     expect(merchant[:attributes][:updated_at]).to be_a(String)
    end
   end
 
@@ -41,7 +35,6 @@ RSpec.describe "Merchants API" do
 
   it "sends info for a single merchant(show)" do
     merchant_1 = Merchant.create!(name: "Billy's Pet Rocks")
-    item_1 = merchant_1.items.create!(name: 'Obsidian Nobice', description: 'A beautiful obsidian', unit_price: 500)
     get "/api/v1/merchants/#{merchant_1.id}"
 
     expect(response).to be_successful
@@ -54,13 +47,6 @@ RSpec.describe "Merchants API" do
     expect(merchant[:data][:attributes]).to have_key(:name)
     expect(merchant[:data][:attributes][:name]).to be_a(String)
     expect(merchant[:data][:attributes][:name]).to eq("Billy's Pet Rocks")
-
-
-    expect(merchant[:data][:attributes]).to have_key(:created_at)
-    expect(merchant[:data][:attributes][:created_at]).to be_a(String)
-
-    expect(merchant[:data][:attributes]).to have_key(:updated_at)
-    expect(merchant[:data][:attributes][:updated_at]).to be_a(String)
   end
 
   xit "sad path no merchant(show) blank parse" do
