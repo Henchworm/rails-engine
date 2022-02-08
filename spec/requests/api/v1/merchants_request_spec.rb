@@ -9,21 +9,25 @@ RSpec.describe "Merchants API" do
 
     merchants = JSON.parse(response.body, symbolize_names: true)
 
-    expect(merchants.count).to eq(5)
 
-    merchants.each do |merchant|
+    expect(merchants[:data].count).to eq(5)
+
+    merchants[:data].each do |merchant|
      expect(merchant).to have_key(:id)
-     expect(merchant[:id]).to be_an(Integer)
+     expect(merchant[:id]).to be_a(String)
 
-     expect(merchant).to have_key(:name)
-     expect(merchant[:name]).to be_a(String)
+     expect(merchant).to have_key(:type)
+     expect(merchant[:type]).to eq("merchant")
+
+     expect(merchant[:attributes]).to have_key(:name)
+     expect(merchant[:attributes][:name]).to be_a(String)
 
 
-     expect(merchant).to have_key(:created_at)
-     expect(merchant[:created_at]).to be_a(String)
+     expect(merchant[:attributes]).to have_key(:created_at)
+     expect(merchant[:attributes][:created_at]).to be_a(String)
 
-     expect(merchant).to have_key(:updated_at)
-     expect(merchant[:updated_at]).to be_a(String)
+     expect(merchant[:attributes]).to have_key(:updated_at)
+     expect(merchant[:attributes][:updated_at]).to be_a(String)
    end
   end
 
@@ -35,19 +39,20 @@ RSpec.describe "Merchants API" do
     expect(response).to be_successful
 
     merchant = JSON.parse(response.body, symbolize_names: true)
+    binding.pry
 
-    expect(merchant).to have_key(:id)
-    expect(merchant[:id]).to be_an(Integer)
+    expect(merchant[:data]).to have_key(:id)
+    expect(merchant[:data][:id]).to be_a(String)
 
-    expect(merchant).to have_key(:name)
-    expect(merchant[:name]).to be_a(String)
-    expect(merchant[:name]).to eq("Billy's Pet Rocks")
+    expect(merchant[:data][:attributes]).to have_key(:name)
+    expect(merchant[:data][:attributes][:name]).to be_a(String)
+    expect(merchant[:data][:attributes][:name]).to eq("Billy's Pet Rocks")
 
 
-    expect(merchant).to have_key(:created_at)
-    expect(merchant[:created_at]).to be_a(String)
+    expect(merchant[:data][:attributes]).to have_key(:created_at)
+    expect(merchant[:data][:attributes][:created_at]).to be_a(String)
 
-    expect(merchant).to have_key(:updated_at)
-    expect(merchant[:updated_at]).to be_a(String)
+    expect(merchant[:data][:attributes]).to have_key(:updated_at)
+    expect(merchant[:data][:attributes][:updated_at]).to be_a(String)
   end
 end

@@ -151,6 +151,7 @@
           null,
           1,
           null,
+          null,
           1,
           null,
           1,
@@ -160,6 +161,9 @@
           5,
           5,
           null,
+          5,
+          5,
+          null,
           null,
           5,
           5,
@@ -177,22 +181,21 @@
           1,
           null,
           1,
-          null,
-          1,
           1,
           null,
-          1,
-          1,
-          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
           null,
           null,
-          1,
-          1,
+          0,
+          0,
           null,
-          1,
-          1,
-          null,
-          null,
+          0,
+          0,
           null,
           null
         ]
@@ -215,8 +218,19 @@
           1,
           null
         ]
+      },
+      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1644275793
+    "timestamp": 1644278902
   }
 }

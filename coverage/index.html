@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-02-07T16:16:33-07:00">2022-02-07T16:16:33-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-02-07T17:08:22-07:00">2022-02-07T17:08:22-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  100.0%
+  91.51%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.48
+         1.43
        </span>
     </span> hits/line
     )
@@ -39,15 +39,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>15</b> files in total.
+    <b>16</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>98</b> relevant lines,
-    <span class="green"><b>98</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed. </span>
+    <b>106</b> relevant lines,
+    <span class="green"><b>97</b> lines covered</span> and
+    <span class="red"><b>9</b> lines missed. </span>
     (<span class="green">
-  100.0%
+  91.51%
 </span>
 )
   </div>
@@ -170,6 +170,17 @@
           </tr>
         
           <tr class="t-file">
+            <td class="strong t-file__name"><a href="#9a3f08f6fe962d4d9dd770ce7358171e452bfc7b" class="src_link" title="app/serializers/merchant_serializer.rb">app/serializers/merchant_serializer.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
             <td class="strong t-file__name"><a href="#470874d0f7f541b4c384c1ecc3e358734152e52e" class="src_link" title="spec/models/invoice_item_spec.rb">spec/models/invoice_item_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">8</td>
@@ -226,12 +237,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#a85a65e45a1f52c81bad3c0b639c0498a61af859" class="src_link" title="spec/requests/api/v1/merchants_request_spec.rb">spec/requests/api/v1/merchants_request_spec.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">55</td>
-            <td class="cell--number">31</td>
-            <td class="cell--number">31</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">2.03</td>
+            <td class="red strong cell--number t-file__coverage">73.53 %</td>
+            <td class="cell--number">58</td>
+            <td class="cell--number">34</td>
+            <td class="cell--number">25</td>
+            <td class="cell--number">9</td>
+            <td class="cell--number">1.91</td>
             
           </tr>
         
@@ -307,7 +318,7 @@
 
             
 
-            <code class="ruby">    render json: Merchant.all</code>
+            <code class="ruby">    render json: MerchantSerializer.new(Merchant.all)</code>
           </li>
         </div>
       
@@ -351,7 +362,7 @@
 
             
 
-            <code class="ruby">    render json: Merchant.find(params[:id])</code>
+            <code class="ruby">    render json: MerchantSerializer.new(Merchant.find(params[:id]))</code>
           </li>
         </div>
       
@@ -1056,6 +1067,114 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="3">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="9a3f08f6fe962d4d9dd770ce7358171e452bfc7b">
+  <div class="header">
+    <h3>app/serializers/merchant_serializer.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>5</b> relevant lines.
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">class MerchantSerializer</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  include JSONAPI::Serializer</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
+            
+            
+
+            
+
+            <code class="ruby">  # has_many :items</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  set_type :merchant</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  set_id :id</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  attributes :name, :created_at, :updated_at</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
             
             
 
@@ -1790,8 +1909,8 @@
   <div class="header">
     <h3>spec/requests/api/v1/merchants_request_spec.rb</h3>
     <h4>
-      <span class="green">
-  100.0%
+      <span class="red">
+  73.53%
 </span>
 
       lines covered
@@ -1800,9 +1919,9 @@
     
 
     <div class="t-line-summary">
-      <b>31</b> relevant lines.
-      <span class="green"><b>31</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>34</b> relevant lines.
+      <span class="green"><b>25</b> lines covered</span> and
+      <span class="red"><b>9</b> lines missed.</span>
     </div>
 
     
@@ -1934,18 +2053,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(merchants.count).to eq(5)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -1956,24 +2064,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
+          <li class="covered" data-hits="1" data-linenumber="13">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    merchants.each do |merchant|</code>
+            <code class="ruby">    expect(merchants[:data].count).to eq(5)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="15">
-            <span class="hits">5</span>
+          <li class="never" data-hits="" data-linenumber="14">
+            
             
 
             
 
-            <code class="ruby">     expect(merchant).to have_key(:id)</code>
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    merchants[:data].each do |merchant|</code>
           </li>
         </div>
       
@@ -1984,29 +2103,29 @@
 
             
 
-            <code class="ruby">     expect(merchant[:id]).to be_an(Integer)</code>
+            <code class="ruby">     expect(merchant).to have_key(:id)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="covered" data-hits="5" data-linenumber="17">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">     expect(merchant[:id]).to be_a(String)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="5" data-linenumber="18">
-            <span class="hits">5</span>
-            
-
-            
-
-            <code class="ruby">     expect(merchant).to have_key(:name)</code>
           </li>
         </div>
       
@@ -2017,18 +2136,18 @@
 
             
 
-            <code class="ruby">     expect(merchant[:name]).to be_a(String)</code>
+            <code class="ruby">     expect(merchant).to have_key(:type)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
-            
-            
-
+          <li class="covered" data-hits="5" data-linenumber="20">
+            <span class="hits">5</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">     expect(merchant[:type]).to eq(&quot;merchant&quot;)</code>
           </li>
         </div>
       
@@ -2050,7 +2169,7 @@
 
             
 
-            <code class="ruby">     expect(merchant).to have_key(:created_at)</code>
+            <code class="ruby">     expect(merchant[:attributes]).to have_key(:name)</code>
           </li>
         </div>
       
@@ -2061,7 +2180,7 @@
 
             
 
-            <code class="ruby">     expect(merchant[:created_at]).to be_a(String)</code>
+            <code class="ruby">     expect(merchant[:attributes][:name]).to be_a(String)</code>
           </li>
         </div>
       
@@ -2077,13 +2196,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="25">
-            <span class="hits">5</span>
+          <li class="never" data-hits="" data-linenumber="25">
+            
             
 
             
 
-            <code class="ruby">     expect(merchant).to have_key(:updated_at)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2094,18 +2213,18 @@
 
             
 
-            <code class="ruby">     expect(merchant[:updated_at]).to be_a(String)</code>
+            <code class="ruby">     expect(merchant[:attributes]).to have_key(:created_at)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="27">
-            
-            
-
+          <li class="covered" data-hits="5" data-linenumber="27">
+            <span class="hits">5</span>
             
 
-            <code class="ruby">   end</code>
+            
+
+            <code class="ruby">     expect(merchant[:attributes][:created_at]).to be_a(String)</code>
           </li>
         </div>
       
@@ -2116,40 +2235,40 @@
 
             
 
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="29">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="30">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="5" data-linenumber="29">
+            <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">  it &quot;sends info for a single merchant(show)&quot; do</code>
+            <code class="ruby">     expect(merchant[:attributes]).to have_key(:updated_at)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="31">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="5" data-linenumber="30">
+            <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">    merchant_1 = Merchant.create!(name: &quot;Billy&#39;s Pet Rocks&quot;)</code>
+            <code class="ruby">     expect(merchant[:attributes][:updated_at]).to be_a(String)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby">   end</code>
           </li>
         </div>
       
@@ -2160,29 +2279,29 @@
 
             
 
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="33">
+          <li class="covered" data-hits="1" data-linenumber="34">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    get &quot;/api/v1/merchants/#{merchant_1.id}&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="34">
-            
-            
-
-            
-
-            <code class="ruby"></code>
+            <code class="ruby">  it &quot;sends info for a single merchant(show)&quot; do</code>
           </li>
         </div>
       
@@ -2193,7 +2312,7 @@
 
             
 
-            <code class="ruby">    expect(response).to be_successful</code>
+            <code class="ruby">    merchant_1 = Merchant.create!(name: &quot;Billy&#39;s Pet Rocks&quot;)</code>
           </li>
         </div>
       
@@ -2215,7 +2334,7 @@
 
             
 
-            <code class="ruby">    merchant = JSON.parse(response.body, symbolize_names: true)</code>
+            <code class="ruby">    get &quot;/api/v1/merchants/#{merchant_1.id}&quot;</code>
           </li>
         </div>
       
@@ -2237,29 +2356,29 @@
 
             
 
-            <code class="ruby">    expect(merchant).to have_key(:id)</code>
+            <code class="ruby">    expect(response).to be_successful</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="40">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(merchant[:id]).to be_an(Integer)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="41">
+          <li class="never" data-hits="" data-linenumber="40">
             
             
 
             
 
             <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="41">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    merchant = JSON.parse(response.body, symbolize_names: true)</code>
           </li>
         </div>
       
@@ -2270,40 +2389,40 @@
 
             
 
-            <code class="ruby">    expect(merchant).to have_key(:name)</code>
+            <code class="ruby">    binding.pry</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="43">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(merchant[:name]).to be_a(String)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="44">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(merchant[:name]).to eq(&quot;Billy&#39;s Pet Rocks&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="45">
+          <li class="never" data-hits="" data-linenumber="43">
             
             
 
             
 
             <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="44">
+            
+            
+
+            
+
+            <code class="ruby">    expect(merchant[:data]).to have_key(:id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby">    expect(merchant[:data][:id]).to be_a(String)</code>
           </li>
         </div>
       
@@ -2319,29 +2438,40 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="47">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="47">
+            
             
 
             
 
-            <code class="ruby">    expect(merchant).to have_key(:created_at)</code>
+            <code class="ruby">    expect(merchant[:data][:attributes]).to have_key(:name)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="48">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="48">
+            
             
 
             
 
-            <code class="ruby">    expect(merchant[:created_at]).to be_a(String)</code>
+            <code class="ruby">    expect(merchant[:data][:attributes][:name]).to be_a(String)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="49">
+          <li class="missed" data-hits="0" data-linenumber="49">
+            
+            
+
+            
+
+            <code class="ruby">    expect(merchant[:data][:attributes][:name]).to eq(&quot;Billy&#39;s Pet Rocks&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="50">
             
             
 
@@ -2352,29 +2482,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="50">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(merchant).to have_key(:updated_at)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="51">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(merchant[:updated_at]).to be_a(String)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="52">
+          <li class="never" data-hits="" data-linenumber="51">
             
             
 
@@ -2385,13 +2493,24 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="53">
+          <li class="missed" data-hits="0" data-linenumber="52">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    expect(merchant[:data][:attributes]).to have_key(:created_at)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="53">
+            
+            
+
+            
+
+            <code class="ruby">    expect(merchant[:data][:attributes][:created_at]).to be_a(String)</code>
           </li>
         </div>
       
@@ -2402,12 +2521,45 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="55">
+            
+            
+
+            
+
+            <code class="ruby">    expect(merchant[:data][:attributes]).to have_key(:updated_at)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="56">
+            
+            
+
+            
+
+            <code class="ruby">    expect(merchant[:data][:attributes][:updated_at]).to be_a(String)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="57">
+            
+            
+
+            
+
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="55">
+          <li class="never" data-hits="" data-linenumber="58">
             
             
 
