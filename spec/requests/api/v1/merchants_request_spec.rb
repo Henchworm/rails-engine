@@ -33,13 +33,12 @@ RSpec.describe "Merchants API" do
 
   it "sends info for a single merchant(show)" do
     merchant_1 = Merchant.create!(name: "Billy's Pet Rocks")
-
+    item_1 = merchant_1.items.create!(name: 'Obsidian Nobice', description: 'A beautiful obsidian', unit_price: 500)
     get "/api/v1/merchants/#{merchant_1.id}"
 
     expect(response).to be_successful
 
     merchant = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
 
     expect(merchant[:data]).to have_key(:id)
     expect(merchant[:data][:id]).to be_a(String)
