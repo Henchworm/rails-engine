@@ -59,3 +59,5 @@ RSpec.describe "Merchants API" do
       expect(fail_response).to eq("Couldn't find Merchant with 'id'=1")
   end
 end
+
+
