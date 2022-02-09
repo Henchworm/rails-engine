@@ -51,7 +51,11 @@ RSpec.describe "Merchants API" do
 
   it "sad path no merchant(show) blank parse" do
       get '/api/v1/merchants/1'
+
       expect(response).to_not be_successful
-      expect(response.body).to eq("Couldn't find Merchant with 'id'=1")
+
+      fail_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(fail_response).to eq("Couldn't find Merchant with 'id'=1")
   end
 end
