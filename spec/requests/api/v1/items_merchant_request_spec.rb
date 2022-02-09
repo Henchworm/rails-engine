@@ -23,13 +23,5 @@ RSpec.describe "items merchant request" do
     fail_response = JSON.parse(response.body, symbolize_names: true)
 
     expect(fail_response[:errors][:details]).to eq("Item with id of 20 does not exist.")
-
-    # response = JSON.parse(response.body, symbolize_names: true)
-    # expect(response).to eq("Couldn't find Item with 'id'=20")
   end
-
-
-
-
-
 end
