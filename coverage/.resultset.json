@@ -245,6 +245,7 @@
           1,
           null,
           1,
+          1,
           null,
           null,
           1,
@@ -358,11 +359,6 @@
           null,
           1,
           2,
-          2,
-          1,
-          null,
-          1,
-          null,
           null,
           null,
           1,
@@ -375,7 +371,7 @@
           null,
           1,
           1,
-          4,
+          3,
           null,
           null
         ]
@@ -383,6 +379,41 @@
       "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/controllers/concerns/response.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          5,
+          0,
+          5,
+          1,
+          null,
+          4,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/controllers/concerns/exception_handler.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
           null
         ]
       },
@@ -422,6 +453,6 @@
         ]
       }
     },
-    "timestamp": 1644360009
+    "timestamp": 1644365669
   }
 }

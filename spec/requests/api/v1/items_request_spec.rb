@@ -103,6 +103,7 @@ RSpec.describe "Items API" do
     item = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to_not be_successful
+    expect(item[:merchant]).to eq(["must exist"])
   end
 
   it "sends info to create a new item" do
