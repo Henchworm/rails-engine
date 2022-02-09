@@ -21,6 +21,6 @@ RSpec.describe "merchant search request" do
 
     expect(response).to be_successful
     parsed = JSON.parse(response.body, symbolize_names: true)
-    expect(parsed[:errors][:data]).to eq("No merchants match your search corn")
+    expect(parsed[:data][:merchant]).to eq([])
   end
 end

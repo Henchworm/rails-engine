@@ -329,6 +329,33 @@
           null
         ]
       },
+      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/spec/requests/api/v1/items_search_spec.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          2,
+          2,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/spec/requests/api/v1/merchant_items_request_spec.rb": {
         "lines": [
           1,
@@ -578,6 +605,17 @@
           null
         ]
       },
+      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/controllers/api/v1/items_find_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/controllers/api/v1/merchant_items_controller.rb": {
         "lines": [
           1,
@@ -608,10 +646,6 @@
           1,
           null,
           1,
-          null,
-          null,
-          null,
-          null,
           2,
           2,
           2,
@@ -624,6 +658,6 @@
         ]
       }
     },
-    "timestamp": 1644428462
+    "timestamp": 1644431638
   }
 }
