@@ -138,6 +138,27 @@
           null
         ]
       },
+      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/spec/requests/api/v1/items_merchant_request_spec.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/spec/requests/api/v1/items_request_spec.rb": {
         "lines": [
           1,
@@ -291,6 +312,50 @@
           null
         ]
       },
+      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/spec/requests/api/v1/merchant_items_request_spec.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          2,
+          2,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          2,
+          null,
+          2,
+          2,
+          null,
+          2,
+          2,
+          null,
+          2,
+          2,
+          null,
+          2,
+          2,
+          null,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/spec/requests/api/v1/merchants_request_spec.rb": {
         "lines": [
           1,
@@ -345,11 +410,82 @@
           null,
           null,
           1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/controllers/api/v1/item_merchant_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/controllers/concerns/response.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          7,
+          2,
+          5,
+          1,
+          null,
+          4,
+          null,
+          null,
+          null,
+          1,
+          2,
           0,
+          2,
           0,
+          null,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/controllers/concerns/exception_handler.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
           0,
-          0,
-          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -385,57 +521,6 @@
           null
         ]
       },
-      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/controllers/concerns/response.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          6,
-          1,
-          5,
-          1,
-          null,
-          4,
-          null,
-          null,
-          null,
-          1,
-          1,
-          0,
-          1,
-          0,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/controllers/concerns/exception_handler.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
       "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/serializers/item_serializer.rb": {
         "lines": [
           1,
@@ -443,6 +528,17 @@
           1,
           1,
           1,
+          null
+        ]
+      },
+      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/controllers/api/v1/merchant_items_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -455,25 +551,12 @@
           null,
           null,
           1,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/chrishewitt/Turing/3mod/rails_engine_lite/rails-engine/app/serializers/merchant_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
+          2,
           null,
           null
         ]
       }
     },
-    "timestamp": 1644367495
+    "timestamp": 1644371229
   }
 }

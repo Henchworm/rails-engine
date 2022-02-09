@@ -49,11 +49,9 @@ RSpec.describe "Merchants API" do
     expect(merchant[:data][:attributes][:name]).to eq("Billy's Pet Rocks")
   end
 
-  xit "sad path no merchant(show) blank parse" do
+  it "sad path no merchant(show) blank parse" do
       get '/api/v1/merchants/1'
-      expect(response).to be_successful
-      merchant = JSON.parse(response.body, symbolize_names: true)
-      binding.pry
-      expect(merchants).to eq({data:[]})
+      expect(response).to_not be_successful
+      expect(response.body).to eq("Couldn't find Merchant with 'id'=1")
   end
 end
