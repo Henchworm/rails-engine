@@ -14,4 +14,22 @@ RSpec.describe "items merchant request" do
     expect(merchant[:data][:type]).to eq("merchant")
     expect(merchant[:data][:attributes][:name]).to eq(merchant_1.name)
   end
+
+  it "get an items merchant(sad path)" do
+    get "/api/v1/items/20/merchant"
+
+    expect(response).to_not be_successful
+
+    fail_response = JSON.parse(response.body, symbolize_names: true)
+
+    expect(fail_response[:errors][:details]).to eq("Item with id of 20 does not exist.")
+
+    # response = JSON.parse(response.body, symbolize_names: true)
+    # expect(response).to eq("Couldn't find Item with 'id'=20")
+  end
+
+
+
+
+
 end

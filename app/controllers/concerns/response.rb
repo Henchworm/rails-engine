@@ -1,21 +1,13 @@
 module Response
 
-  def json_items_response(object, status = :ok)
+  def json_response(object, status = :ok)
     if object[:message].present?
-      render json: object[:message], status: status
+      render json: object[:message].to_json, status: 404
     elsif object.errors.present?
-      render json: object.errors, status: 404
-    else
+      render json: object.errors.to_json, status: 404
+    elsif object.class == Item
      render json: ItemSerializer.new(object), status: status
-    end
-  end
-
-  def json_merchants_response(object, status = :ok)
-    if object[:message].present?
-      render json: object[:message], status: status
-    elsif object.errors.present?
-      render json: object.errors, status: 404
-    else
+   elsif object.class == Merchant
      render json: MerchantSerializer.new(object), status: status
     end
   end

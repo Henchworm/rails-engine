@@ -76,7 +76,10 @@ RSpec.describe "Items API" do
     get "/api/v1/items/#{id}"
 
     expect(response).to_not be_successful
-    expect(response.body).to eq("Couldn't find Item with 'id'=99999999999")
+
+   fail_response= JSON.parse(response.body, symbolize_names: true)
+
+   expect(fail_response).to eq("Couldn't find Item with 'id'=99999999999")
   end
 
 
@@ -109,9 +112,10 @@ RSpec.describe "Items API" do
     headers = {"CONTENT_TYPE" => "application/json"}
     patch "/api/v1/items/#{not_yet_updated.id}", headers: headers, params: JSON.generate(item: item_params)
 
+    expect(response).to_not be_successful
+
     item = JSON.parse(response.body, symbolize_names: true)
 
-    expect(response).to_not be_successful
     expect(item[:merchant]).to eq(["must exist"])
   end
 

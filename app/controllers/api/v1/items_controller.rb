@@ -5,19 +5,19 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def show
-    json_items_response(Item.find(params[:id]))
+    json_response(Item.find(params[:id]))
   end
 
   def update
-    json_items_response(Item.update(params[:id], item_params))
+    json_response(Item.update(params[:id], item_params))
   end
 
   def create
-    json_items_response(Item.create!(item_params), 201)
+    json_response(Item.create!(item_params), 201)
   end
 
   def destroy
-    json_items_response(Item.find(params[:id]).delete)
+    json_response(Item.find(params[:id]).delete)
   end
 
   private
