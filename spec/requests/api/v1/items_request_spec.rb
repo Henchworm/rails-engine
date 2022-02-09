@@ -71,6 +71,15 @@ RSpec.describe "Items API" do
     expect(item[:data][:attributes][:merchant_id]).to eq(merchant_1.id)
   end
 
+  it "sad path for a single item(show)" do
+    id = 99999999999
+    get "/api/v1/items/#{id}"
+
+    expect(response).to_not be_successful
+    expect(response.body).to eq("Couldn't find Item with 'id'=99999999999")
+  end
+
+
   it "sends info to edit an item" do
 
     not_yet_updated = Item.first
