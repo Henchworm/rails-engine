@@ -14,13 +14,32 @@ RSpec.describe "merchant search request" do
     expect(parsed[:data][:attributes][:name]).to eq("Billy's Pet Rocks")
   end
 
-  it "finds an individual merchant by name(sad path)" do
+  it "finds an individual merchant by name(sad path) no match" do
     query = "corn"
     get "/api/v1/merchants/find?name=#{query}"
 
     expect(response).to be_successful
     parsed = JSON.parse(response.body, symbolize_names: true)
     expect(parsed[:data][:merchant]).to eq([])
+  end
+
+  it "finds an individual merchant by name(sad path) nil params" do
+
+    get "/api/v1/merchants/find?"
+
+    expect(response).to_not be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed[:errors][:details]).to eq("No params.")
+  end
+
+  it "finds an individual merchant by name(sad path) blank params" do
+
+    get "/api/v1/merchants/find?name="
+
+    expect(response).to_not be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed[:errors][:details]).to eq("Empty params.")
+
   end
 
   it "find all merchants that match the name" do

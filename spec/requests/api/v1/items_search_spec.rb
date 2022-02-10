@@ -33,11 +33,27 @@ RSpec.describe "items search" do
       expect(parsed[:data][:attributes][:merchant_id]).to eq(merchant_1.id)
   end
 
-  it "finds one item by name(sad path) and returns empty array" do
+  it "finds one item by name(sad path no record) and returns empty array" do
     query = "Jesus Candles"
     get "/api/v1/items/find?name=#{query}"
 
     expect(response).to be_successful
     parsed = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  it "finds one item by name(sad path) blank params" do
+    get "/api/v1/items/find_all?name="
+
+    expect(response).to_not be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed[:errors][:details]).to eq("Empty params.")
+  end
+
+  it "finds one item by name(sad path) no params" do
+    get "/api/v1/items/find_all?"
+
+    expect(response).to_not be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed[:errors][:details]).to eq("No params.")
   end
 end
