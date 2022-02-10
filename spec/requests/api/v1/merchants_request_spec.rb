@@ -56,7 +56,7 @@ RSpec.describe "Merchants API" do
 
       fail_response = JSON.parse(response.body, symbolize_names: true)
 
-      expect(fail_response[:message]).to eq("Couldn't find Merchant with 'id'=1")
+      expect(fail_response[:error][:message]).to eq("Couldn't find Merchant with 'id'=1")
   end
 end
 

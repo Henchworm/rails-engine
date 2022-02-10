@@ -20,4 +20,10 @@ RSpec.describe "items search" do
       expect(item[:attributes][:merchant_id]).to eq(merchant_1.id)
     end
   end
+
+  it "finds one item by name" do
+    query = "Obsidian Nobice"
+    get "/api/v1/items/find?name=#{query}"
+  end
+
 end

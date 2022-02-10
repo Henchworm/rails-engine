@@ -79,7 +79,7 @@ RSpec.describe "Items API" do
 
    fail_response= JSON.parse(response.body, symbolize_names: true)
 
-   expect(fail_response[:message]).to eq("Couldn't find Item with 'id'=99999999999")
+   expect(fail_response[:error][:message]).to eq("Couldn't find Item with 'id'=99999999999")
   end
 
 
