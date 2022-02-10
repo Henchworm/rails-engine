@@ -24,6 +24,20 @@ RSpec.describe "items search" do
   it "finds one item by name" do
     query = "Obsidian Nobice"
     get "/api/v1/items/find?name=#{query}"
+
+    expect(response).to be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+      expect(parsed[:data][:id]).to be_a(String)
+      expect(parsed[:data][:type]).to eq("item")
+      expect(parsed[:data][:attributes][:name]).to eq("Obsidian Nobice")
+      expect(parsed[:data][:attributes][:merchant_id]).to eq(merchant_1.id)
   end
 
+  it "finds one item by name(sad path) and returns empty array" do
+    query = "Jesus Candles"
+    get "/api/v1/items/find?name=#{query}"
+
+    expect(response).to be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+  end
 end
