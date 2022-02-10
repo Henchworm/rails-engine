@@ -3,8 +3,8 @@ module Response
   def json_response(object, status = :ok)
     if object[:message].present?
       render json: object[:message].to_json, status: 404
-    elsif object[:error].present?
-      render json: object[:error].to_json, status: 404
+    elsif object[:errors].present?
+      render json: object[:errors].to_json, status: 404
     elsif object.errors.present?
         render json: object.errors.messages.to_json, status: 404
     elsif object.class == Item
