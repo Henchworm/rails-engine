@@ -43,7 +43,7 @@ http://localhost:3000/api/v1/items/find?min_price=50 finds an item where the min
 http://localhost:3000/api/v1/items/find?max_price=50 finds an item where the maximum price is 50.0 (determined by alphabetical order of item name)
 
 ```
-You can view further requests, including POST/PATCH/DELETE and edgecases specs by downloading [this postman suite](https://backend.turing.edu/module3/projects/rails_engine_lite/RailsEngineSection1.postman_collection.json)
+You can view further requests, including POST/PATCH/DELETE and edgecase specs by downloading [this postman suite](https://backend.turing.edu/module3/projects/rails_engine_lite/RailsEngineSection1.postman_collection.json)
 and [this other postman suite.](https://backend.turing.edu/module3/projects/rails_engine_lite/RailsEngineSection2.postman_collection.json)
 Never used Postman? [Check it out here. I know you can do it.](https://www.postman.com/postman/workspace/postman-public-workspace/documentation/12959542-c8142d51-e97c-46b6-bd77-52bb66712c9a)
 
@@ -74,7 +74,7 @@ Never used Postman? [Check it out here. I know you can do it.](https://www.postm
 5. push to the branch (`git push origin feature/myfeature`)
 6. create a new pull request
 
-## Who am I?
+## Who is Henchworm?
 
 Chris Hewitt – [My Cool Website That's Mostly About Music](http://www.goldenbullfrog.com/) – agop5134@gmail.com
 
