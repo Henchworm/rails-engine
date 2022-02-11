@@ -6,7 +6,7 @@ Rails Engine Lite is a backend Rails application that provides API endpoints rel
 
 ## Schema
 
-![](https://i.imgur.com/HLxqUk3.png))
+![](https://i.imgur.com/HLxqUk3.png)
 
 ## Setup
 
