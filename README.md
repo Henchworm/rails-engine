@@ -71,9 +71,10 @@ Never used Postman? [Check it out here. I know you can do it.](https://www.postm
 1. fork it (<https://github.com/Henchworm/rails-engine/fork>)
 2. create your feature branch (`git checkout -b feature/myfeature`)
 3. use TDD
-4. commit your changes (`git commit -am 'Add new merchant'`)
-5. push to the branch (`git push origin feature/myfeature`)
-6. create a new pull request
+4. add your changes (`git add . `)
+5. commit your changes (`git commit -m 'Add new merchant'`)
+6. push to the branch (`git push origin feature/myfeature`)
+7. create a new pull request
 
 ## Who is Henchworm?
 
