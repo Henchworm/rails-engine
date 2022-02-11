@@ -1,7 +1,5 @@
 module Response
   def json_response(object, status = :ok)
-    # binding.pry
-
     if object[:message].present?
       render json: object[:message].to_json, status: 404
     elsif object[:errors].present?

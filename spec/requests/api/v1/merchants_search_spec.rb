@@ -58,4 +58,25 @@ RSpec.describe "merchant search request" do
       expect(merchant[:type]).to eq("merchant")
     end
   end
+
+  it "finds all merchant by name(sad path) nil params" do
+
+    get "/api/v1/merchants/find_all?"
+
+    expect(response).to_not be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed[:errors][:details]).to eq("No params.")
+  end
+
+  it "finds all merchant by name(sad path) blank params" do
+
+    get "/api/v1/merchants/find_all?name="
+
+    expect(response).to_not be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed[:errors][:details]).to eq("Empty params.")
+
+  end
+
+
 end

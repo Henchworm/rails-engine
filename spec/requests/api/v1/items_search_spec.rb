@@ -4,6 +4,8 @@ RSpec.describe "items search" do
 
   let!(:item_1) {merchant_1.items.create!(name: 'Obsidian Nobice', description: 'A beautiful obsidian', unit_price: 50)}
   let!(:item_2) {merchant_1.items.create!(name: 'Green Obsidian Cup', description: 'An obsidian cup', unit_price: 100)}
+  let!(:item_3) {merchant_1.items.create!(name: 'Dirt', description: 'dirt', unit_price: 10)}
+
 
   it "find all items that match a search" do
     query = "obsidian"
@@ -41,8 +43,8 @@ RSpec.describe "items search" do
     parsed = JSON.parse(response.body, symbolize_names: true)
   end
 
-  it "finds one item by name(sad path) blank params" do
-    get "/api/v1/items/find_all?name="
+  it "finds  one itemby name(sad path) blank params" do
+    get "/api/v1/items/find?name="
 
     expect(response).to_not be_successful
     parsed = JSON.parse(response.body, symbolize_names: true)
@@ -50,10 +52,62 @@ RSpec.describe "items search" do
   end
 
   it "finds one item by name(sad path) no params" do
+    get "/api/v1/items/find?"
+
+    expect(response).to_not be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed[:errors][:details]).to eq("No params.")
+  end
+
+  it "finds all items by name(sad path) blank params" do
+    get "/api/v1/items/find_all?name="
+
+    expect(response).to_not be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed[:errors][:details]).to eq("Empty params.")
+  end
+
+  it "finds all items  by name(sad path) no params" do
     get "/api/v1/items/find_all?"
 
     expect(response).to_not be_successful
     parsed = JSON.parse(response.body, symbolize_names: true)
     expect(parsed[:errors][:details]).to eq("No params.")
+  end
+
+  it "finds the alphabetical first item min price" do
+    query = 50
+    get "/api/v1/items/find?min_price=#{query}"
+    expect(response).to be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed[:data][:attributes][:name]).to eq("Green Obsidian Cup")
+    expect(parsed[:data][:attributes][:unit_price]).to eq(100)
+    expect(parsed[:data][:type]).to eq("item")
+  end
+
+  it "finds the alphabetical first item by max price" do
+    query = 60
+    get "/api/v1/items/find?max_price=#{query}"
+    expect(response).to be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed[:data][:attributes][:name]).to eq("Dirt")
+    expect(parsed[:data][:attributes][:unit_price]).to eq(10.0)
+    expect(parsed[:data][:type]).to eq("item")
+  end
+
+  it "finds the alphabetical first item by max price(sad path)max_price less than 0 " do
+    query = -5
+    get "/api/v1/items/find?min_price=#{query}"
+    expect(response).to_not be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed[:errors][:error]).to eq("Price cannot be less than 0.")
+  end
+
+  it "finds the alphabetical first item by max price(sad path)max_price less than 0 " do
+    query = -5
+    get "/api/v1/items/find?max_price=#{query}"
+    expect(response).to_not be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed[:errors][:error]).to eq("Price cannot be less than 0.")
   end
 end
