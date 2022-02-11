@@ -6,8 +6,8 @@ module ExceptionHandler
       json_response({error: { message: e.message }}, :not_found)
     end
 
-    rescue_from ActiveRecord::RecordInvalid do |e|
-      json_response({error: {message: e.message }}, :unprocessable_entity)
-    end
+    # rescue_from ActiveRecord::RecordInvalid do |e|
+    #   json_response({error: {message: e.message }}, :unprocessable_entity)
+    # end
   end
 end
