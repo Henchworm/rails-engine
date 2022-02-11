@@ -13,7 +13,7 @@ Rails Engine Lite is a backend Rails application that provides API endpoints rel
 1. clone this repository 
 2. cd into ```rails-engine``` directory 
 3. run ```bundle install``` to install gems
-4. download [this](https://raw.githubusercontent.com/turingschool/backend-curriculum-site/gh-pages/module3/projects/rails_engine/rails-engine-development.pgdump) and move it into the /db/ folder in another folder called /data/.
+4. download [this](https://raw.githubusercontent.com/turingschool/backend-curriculum-site/gh-pages/module3/projects/rails_engine/rails-engine-development.pgdump) and move it into the ```/db/``` folder in another folder called ```/data/```
 5. run ```rake db:{drop,create,migrate,seed}``` to prepare the database 
 6. run ```rails db:schema:dump ```
 7. run ```bundle exec rspec``` to run the test suite
