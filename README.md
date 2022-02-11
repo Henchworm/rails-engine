@@ -24,8 +24,8 @@ That's it! You can view the database structure by running ```rails c``` in the t
 Alternatively, you can view the ActiveRecord relationships by placing a ```binding.pry``` in the specs and querying the test database. Try ```Merchant.all``` this time. Don't you miss pet rocks?
 
 ## Usage example: retrieving JSON data from endpoints 
-Start the application server with rails -s, then run curl localhost:300/api/v1/endpoint_you_want. 
-You can view Ruby-parsed JSON in spec/api/v1/requests. 
+Start the application server with ```rails -s```, then run curl ```localhost:300/api/v1/endpoint_you_want```. 
+You can view Ruby-parsed JSON in ```spec/api/v1/requests```. 
 
 Possible endpoints and their data for the production DB are as follows: 
 
