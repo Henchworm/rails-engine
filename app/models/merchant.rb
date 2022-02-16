@@ -9,4 +9,13 @@ class Merchant < ApplicationRecord
   def self.return_one
     Merchant.order(:name).first
   end
+
+  def self.total_revenue(id)
+    joins(invoice_items: {invoice: :transactions})
+      .where( merchants: { id: id }, transactions: {result: "success"}, invoices: {status: "shipped"})
+      .group(:id)
+      .select("SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue ")
+      .first
+      .revenue
+  end
 end
