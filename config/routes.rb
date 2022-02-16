@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      get '/revenue/unshipped', to: 'revenue#show'
       get '/revenue/merchants/:id', to: 'merchants_revenue#show'
       get '/merchants/find/', to: 'merchants_find#show'
       get '/merchants/find_all/', to: 'merchants_find#index'
