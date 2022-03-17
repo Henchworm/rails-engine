@@ -13,6 +13,8 @@ RSpec.describe "items merchant request" do
     expect(merchant[:data][:id]).to eq(merchant_1.id.to_s)
     expect(merchant[:data][:type]).to eq("merchant")
     expect(merchant[:data][:attributes][:name]).to eq(merchant_1.name)
+    expect(merchant[:data][:attributes][:name]).to be_a(String)
+
   end
 
   it "get an items merchant(sad path)" do
