@@ -9,8 +9,7 @@ class Invoice < ApplicationRecord
   def self.unshipped_revenue
     joins(invoice_items: {invoice: :transactions})
     .where(transactions: {result: "success"}, invoices: {status: "pending"})
-    # .group("invoice_items.id")
-    # .select("invoice_items.*")
     .sum("invoice_items.quantity * invoice_items.unit_price")
+    #refacotr to not exit AR 
   end
 end
